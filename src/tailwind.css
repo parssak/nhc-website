@@ -1,0 +1,212 @@
+@import url("http://fonts.cdnfonts.com/css/proxima-nova-2");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* #region - Typography -  */
+* {
+  font-family: Proxima Nova, sans-serif;
+}
+
+h1 {
+  @apply text-4xl tracking-normal font-semibold leading-normal text-accent-darkest sm:text-5xl md:text-6xl;
+}
+
+h2 {
+  @apply text-3xl md:text-5xl font-semibold tracking-wide text-accent-darkest mb-4 md:mb-6;
+}
+
+h3 {
+  @apply text-2xl md:text-4xl font-semibold tracking-wide text-accent-darkest mb-4 md:mb-6;
+}
+
+p {
+  @apply text-base font-light text-accent-darkest leading-relaxed;
+}
+
+ul:not(.unstyled) {
+  @apply space-y-1;
+}
+
+ul:not(.unstyled) li {
+  @apply pl-4 text-black;
+}
+
+ul:not(.unstyled) li::before {
+  @apply text-accent;
+  content: "\2022";
+  font-weight: bold;
+  display: inline-block;
+  width: 1em;
+  margin-left: -1em;
+}
+
+/* #endregion - Typography -  */
+
+/* #region - Inputs - */
+
+a.with-underline {
+  @apply relative transition w-max;
+}
+
+a.with-underline::before {
+  @apply absolute bottom-0 left-0 w-full transition;
+  content: " ";
+  height: 1px;
+  transform: translateY(2px);
+}
+
+a.with-underline:hover::before {
+  @apply text-cyan-800;
+  transform: translateY(-1px);
+}
+
+input[type="text"]:not(.phone-number),
+input[type="email"]:not(.text-base),
+input[type="number"],
+textarea,
+select {
+  @apply border-gray-400 focus:border-accent text-lg py-2 px-4 block w-full  text-accent-darkest  placeholder-gray-500  placeholder:font-light;
+}
+
+.btn {
+  @apply w-max inline-flex items-center border-2 border-transparent font-semibold tracking-wider transition uppercase
+        text-accent-darkest bg-accent-light focus:outline-none focus:ring-2 
+        focus:ring-offset-2 focus:ring-accent;
+}
+
+.btn-dark {
+  @apply text-accent-darkest bg-accent-light hover:bg-accent-light_hover;
+}
+
+.btn-light {
+  @apply text-white border-white bg-transparent hover:bg-accent-light_hover hover:text-accent-darkest hover:border-accent-light_hover;
+}
+
+.btn-transparent {
+  @apply text-accent-darkest bg-transparent border-accent-light  hover:bg-accent-light_hover hover:text-accent-darkest hover:border-accent-light_hover;
+}
+
+.btn-xs {
+  @apply px-2.5 py-1.5 text-xs;
+}
+
+.btn-sm {
+  @apply px-3 py-2 text-sm leading-4;
+}
+
+.btn-md {
+  @apply px-4 py-2 text-sm;
+}
+
+.btn-lg {
+  @apply px-4 py-3 text-base;
+}
+
+.btn-xl {
+  @apply px-4 py-2 text-base md:px-6 md:py-3 md:text-lg;
+}
+
+/* #endregion - Inputs -  */
+
+/* #region - Nav - */
+
+/* #region - Nav - */
+
+.nav-item {
+  @apply relative
+              rounded-md
+              inline-flex
+              items-center
+              text-base
+              font-medium
+              capitalize
+              transition
+              hover:text-accent-darkest
+              focus:outline-none
+              focus:ring-2
+              focus:ring-offset-2
+              focus:ring-accent-light;
+}
+
+.nav-item-mobile {
+  @apply mb-1
+                    p-2
+                    flex
+                    items-center
+                    rounded-md
+                    transition
+                    hover:bg-accent
+                    hover:text-white;
+}
+
+.nav-item-mobile__text {
+  @apply ml-3 text-sm lg:text-base font-medium;
+}
+
+nav a {
+  @apply text-black transition uppercase;
+}
+
+a {
+  @apply tracking-wider font-semibold text-sm;
+}
+
+nav a:hover {
+  @apply text-accent;
+}
+
+nav .router-link-active:not(.no-show-active) {
+  @apply relative;
+}
+
+nav .router-link-active:not(.no-show-active).nav-item-mobile {
+  @apply bg-accent text-white;
+}
+
+.nav-item a::before {
+  @apply bg-accent absolute bottom-0 left-0 w-0 transition-all h-[2px];
+  content: " ";
+  transform: translateY(2px);
+}
+
+.nav-item a.router-link-active::before {
+  @apply w-full !transition-none;
+}
+
+.nav-item a:hover::before {
+  @apply w-full;
+}
+
+.footer-nav-items a {
+  @apply relative;
+}
+
+.footer-nav-items a::before {
+  @apply absolute bg-white bottom-0 left-0 w-0 transition-all duration-300 h-[2px];
+  content: " ";
+  transform: translateY(2px);
+}
+.footer-nav-items a:hover::before {
+  @apply w-full;
+}
+
+.scrollbar::-webkit-scrollbar {
+  @apply w-8 h-8;
+}
+
+.scrollbar::-webkit-scrollbar-track {
+  @apply bg-gray-200;
+}
+
+.scrollbar::-webkit-scrollbar-thumb {
+  @apply bg-accent;
+  /* background: #063840; */
+
+  border: 3px solid #f6f7ed;
+}
+
+.scrollbar::-webkit-scrollbar-thumb:hover {
+  @apply bg-accent;
+}
+/* #endregion */
